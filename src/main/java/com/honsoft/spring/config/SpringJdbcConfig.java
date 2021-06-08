@@ -9,19 +9,19 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import com.honsoft.spring.StudentJDBCTemplate;
+import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @ComponentScan("com.honsoft.spring")
 public class SpringJdbcConfig {
     @Bean
-    public DataSource mysqlDataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+    public HikariDataSource mysqlDataSource() {
+        HikariDataSource dataSource = new HikariDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/quickguide");
+        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/quickguide");
         dataSource.setUsername("shoppingnt");
         dataSource.setPassword("Shoppingnt2021!@");
-
-        return dataSource;
+        return new HikariDataSource(dataSource);
     }
     
     @Bean 
