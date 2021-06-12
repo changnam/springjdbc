@@ -8,7 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import com.honsoft.spring.StudentJDBCTemplate;
+import com.honsoft.spring.StudentDAO;
+import com.honsoft.spring.StudentDAOImpl;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
@@ -25,8 +26,8 @@ public class SpringJdbcConfig {
     }
     
     @Bean 
-    public StudentJDBCTemplate studentJDBCTemplate() {
-    	StudentJDBCTemplate studentJDBCTemplate = new StudentJDBCTemplate();
+    public StudentDAO studentDAOImpl() {
+    	StudentDAOImpl studentJDBCTemplate = new StudentDAOImpl();
     	studentJDBCTemplate.setDataSource(mysqlDataSource());
     	return studentJDBCTemplate;
     }

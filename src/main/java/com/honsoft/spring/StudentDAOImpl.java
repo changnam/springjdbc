@@ -5,7 +5,7 @@ import java.util.List;
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class StudentJDBCTemplate implements StudentDAO {
+public class StudentDAOImpl implements StudentDAO {
    private DataSource dataSource;
    private JdbcTemplate jdbcTemplateObject;
    

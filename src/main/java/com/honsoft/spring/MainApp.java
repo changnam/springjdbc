@@ -11,8 +11,8 @@ public class MainApp {
    public static void main(String[] args) {
       ApplicationContext context = new AnnotationConfigApplicationContext(SpringJdbcConfig.class);
 
-      StudentJDBCTemplate studentJDBCTemplate = 
-         (StudentJDBCTemplate)context.getBean("studentJDBCTemplate");
+      StudentDAO studentJDBCTemplate = 
+         (StudentDAO)context.getBean("studentDAOImpl");
       
       System.out.println("------Records Creation--------" );
       studentJDBCTemplate.create("Zara", 11);
