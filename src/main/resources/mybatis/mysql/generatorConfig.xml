@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="simple" targetRuntime="MyBatis3Simple">
+		<jdbcConnection
+			connectionURL="jdbc:mysql://localhost:3306/quickguide"
+			driverClass="com.mysql.cj.jdbc.Driver" password="Shoppingnt2021!@"
+			userId="shoppingnt">
+			<property name="nullCatalogMeansCurrent" value="true" />
+		</jdbcConnection>
+		<javaModelGenerator
+			targetPackage="com.honsoft.web.entity"
+			targetProject="springjavaconfig/src/main/java" />
+		<javaClientGenerator
+			targetPackage="com.honsoft.web.mapper.mysql"
+			targetProject="springjavaconfig/src/main/java" type="ANNOTATEDMAPPER" />
+		<table schema="quickguide" tableName="users">
+			<!-- <columnOverride column="???" property="???" /> -->
+		</table>
+	</context>
+</generatorConfiguration>

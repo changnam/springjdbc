@@ -1,5 +1,6 @@
 package com.honsoft.spring;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
@@ -18,9 +19,16 @@ public class MainApp {
       studentJDBCTemplate.create("Zara", 11);
       studentJDBCTemplate.create("Nuha", 2);
       studentJDBCTemplate.create("Ayan", 15);
+      
+      List<Student> students = new ArrayList<Student>();
+      students.add(new Student("july",7));
+      students.add(new Student("june",6));
+      students.add(new Student("march",3));
 
+      studentJDBCTemplate.createBatch(students);      
+      
       System.out.println("------Listing Multiple Records--------" );
-      List<Student> students = studentJDBCTemplate.listStudents();
+      students = studentJDBCTemplate.listStudents();
       
       for (Student record : students) {
          System.out.print("ID : " + record.getId() );
